@@ -67,7 +67,16 @@ if want "5. Install the motion and animation sets (genjutsu, gsap-skills; both M
   market "greensock/gsap-skills";   plugin "gsap-skills@gsap-skills"
 fi
 
-say "6. Helper tools"
+if want "6. Install Claude's document skills (Word, PDF, PowerPoint, Excel; from github.com/anthropics/skills)?"; then
+  market "anthropics/skills"; plugin "document-skills@anthropic-agent-skills"
+fi
+
+if want "7. Install the 53 extra community skills (senior engineer roles, cloud and DevOps, UI design, three.js, Playwright; each fetched from its author's repository)?"; then
+  "$KIT/scripts/install-extra-skills.sh"
+  echo "See the full list any time: scripts/install-extra-skills.sh --list"
+fi
+
+say "8. Helper tools"
 for t in gitleaks pandoc; do
   if command -v "$t" >/dev/null 2>&1; then echo "  ok       $t"
   else echo "  missing  $t   (brew install $t)"; fi
@@ -78,6 +87,7 @@ cat <<EOF
 Restart Claude Code, then try:
   /team-kit:team-kit-guide       what is in the kit and which skill to use when
   /team-kit:disk-cleanup         see what is filling the disk
+  /team-kit:code-to-plain-doc    turn code into a document non-developers can read
 
 To protect a repository for everyone who commits to it (not only AI sessions):
   $KIT/scripts/install-git-guard.sh /path/to/repo

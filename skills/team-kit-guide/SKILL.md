@@ -7,8 +7,8 @@ description: Use when someone asks what the team kit contains, which skill, agen
 
 The kit has two layers:
 
-1. **team-kit** (this plugin): the team's working rules as skills, three agents, and two hooks.
-2. **Upstream tool sets**, installed by `setup.sh` from their own repositories: ECC, gstack, superpowers and the official Claude plugins, plus optional motion sets. They are not copied here; see `CREDITS.md`.
+1. **team-kit** (this plugin): 19 skills, 14 agents and two hooks.
+2. **Upstream tool sets**, installed by `setup.sh` from their own repositories: ECC, gstack, superpowers and the official Claude plugins, Claude's document skills, optional motion sets, and 53 community skills (`scripts/install-extra-skills.sh --list`). They are not copied here; see `CREDITS.md`.
 
 ## Which one for the job
 
@@ -27,6 +27,19 @@ The kit has two layers:
 | Laptop is slow, or before a heavy run | `team-kit:machine-guard` |
 | A user guide or handout as PDF | `team-kit:guide-pdf` |
 | Change a document's format | `team-kit:convert-docs` |
+| Turn code into a document for non-developers or DevOps | `team-kit:code-to-plain-doc`, agent `plain-doc-writer` |
+| Verify in a real browser or on a device | `team-kit:qa-like-a-user`, agent `qa-flow-tester` |
+| Known defect shapes to check a diff against | `team-kit:defect-patterns` |
+| Hand work to agents, or act on an agent's report | `team-kit:agent-teamwork` |
+| Wrong commit author, several GitHub accounts, odd 404s | `team-kit:git-identity` |
+| Build a scoped task | agent `implementer` |
+| Fix a reported bug | agent `bug-fixer` |
+| Add tests | agent `test-writer` |
+| Fresh review of a diff | agent `pr-reviewer`, then `finding-verifier` on its findings |
+| Errors that hide | agent `silent-failure-reviewer` |
+| Screens as code | agent `ui-code-reviewer` |
+| "Where is X, how does Y work" | agent `codebase-guide` |
+| Schema questions | agent `db-explorer` |
 | Find an open-source option before building | agent `oss-scout` |
 | Are these tests any good? | agent `test-suite-auditor` |
 | Is this fit to release? | agent `release-readiness-reviewer` |

@@ -1,0 +1,56 @@
+# skill	group	repo	ref (- = default branch)	path in repo	licence	what it does
+d3-viz	data	chrisvoncsefalvay/claude-d3js-skill	-	.	none found	Builds interactive d3.js charts and data visualisations
+interface-design	design	Dammyjay93/interface-design	-	.claude/skills/interface-design	MIT	Craft-first interface design for dashboards and product UI
+brandkit	design	Leonxlnx/taste-skill	taste-skill-v1.9	skills/brandkit	MIT	Generates brand-guideline boards, logo systems and identity decks
+design-taste-frontend	design	Leonxlnx/taste-skill	-	skills/taste-skill	MIT	Anti-slop frontend design skill for landing pages and redesigns
+high-end-visual-design	design	Leonxlnx/taste-skill	taste-skill-v1.9	skills/soft-skill	MIT	Agency-grade visual rules: fonts, spacing, shadows, animation
+image-to-code	design	Leonxlnx/taste-skill	taste-skill-v1.9	skills/image-to-code-skill	MIT	Generates design images first, then codes site to match
+imagegen-frontend-mobile	design	Leonxlnx/taste-skill	taste-skill-v1.9	skills/imagegen-frontend-mobile	MIT	Generates premium mobile app screen concept images
+imagegen-frontend-web	design	Leonxlnx/taste-skill	taste-skill-v1.9	skills/imagegen-frontend-web	MIT	Generates premium per-section website design reference images
+industrial-brutalist-ui	design	Leonxlnx/taste-skill	taste-skill-v1.9	skills/brutalist-skill	MIT	Brutalist Swiss-print and terminal style UI rules
+minimalist-ui	design	Leonxlnx/taste-skill	taste-skill-v1.9	skills/minimalist-skill	MIT	Clean editorial minimalist UI with warm monochrome palette
+redesign-existing-projects	design	Leonxlnx/taste-skill	taste-skill-v1.9	skills/redesign-skill	MIT	Audits and upgrades existing sites to premium design
+motion-design	design	LottieFiles/motion-design-skill	-	skills/motion-design	MIT	Motion design principles, timing and easing for UI animation
+web-asset-generator	design	alonw0/web-asset-generator	-	skills/web-asset-generator	MIT	Generates favicons, PWA icons and Open Graph images
+apple-hig-designer	design	axiaoge2/Apple-Hig-Designer	-	.	MIT	Designs Apple HIG-compliant iOS and macOS interfaces
+nothing-design	design	dominikmartn/nothing-design-skill	-	nothing-design	MIT	Applies Nothing-brand design system when explicitly requested
+design-md	design	google-labs-code/stitch-skills	-	plugins/stitch-utilities/skills/design-md	Apache-2.0	Analyses Stitch projects into a semantic DESIGN.md
+enhance-prompt	design	google-labs-code/stitch-skills	-	plugins/stitch-utilities/skills/enhance-prompt	Apache-2.0	Turns vague UI ideas into Stitch-optimised prompts
+react-vite-dashboard	design	google-labs-code/stitch-skills	-	plugins/stitch-build/skills/react-vite-dashboard	Apache-2.0	Converts Stitch designs into React + Vite dashboards
+shadcn-ui	design	google-labs-code/stitch-skills	-	plugins/stitch-build/skills/shadcn-ui	Apache-2.0	Guidance for integrating and customising shadcn/ui components
+taste-design	design	google-labs-code/stitch-skills	-	plugins/stitch-utilities/skills/taste-design	Apache-2.0	Generates anti-generic DESIGN.md design systems for Stitch
+banner-design	design	nextlevelbuilder/ui-ux-pro-max-skill	-	.claude/skills/banner-design	MIT	Designs banners for social, ads, web heroes and print
+brand	design	nextlevelbuilder/ui-ux-pro-max-skill	-	.claude/skills/brand	MIT	Brand voice, identity, messaging and consistency guidance
+design-system	design	nextlevelbuilder/ui-ux-pro-max-skill	-	.claude/skills/design-system	MIT	Design tokens, component specs and token-driven slide generation
+slides	design	nextlevelbuilder/ui-ux-pro-max-skill	-	.claude/skills/slides	MIT	Builds strategic HTML presentations with charts and design tokens
+ui-styling	design	nextlevelbuilder/ui-ux-pro-max-skill	-	.claude/skills/ui-styling	MIT	UI styling with shadcn/ui, Tailwind and canvas visuals
+ui-ux-pro-max	design	nextlevelbuilder/ui-ux-pro-max-skill	-	.claude/skills/ui-ux-pro-max	MIT	Searchable UI/UX design knowledge base for web and mobile
+web-design-guidelines	design	vercel-labs/agent-skills	-	skills/web-design-guidelines	none found	Reviews UI code against Vercel Web Interface Guidelines
+aws-solution-architect	engineering	alirezarezvani/claude-skills	-	engineering-team/skills/aws-solution-architect	MIT	Designs serverless AWS architectures with IaC templates and cost advice
+azure-cloud-architect	engineering	alirezarezvani/claude-skills	-	engineering-team/skills/azure-cloud-architect	MIT	Designs Azure infrastructure, Bicep templates, cost and DevOps pipelines
+ci-cd-pipeline-builder	engineering	alirezarezvani/claude-skills	-	engineering/skills/ci-cd-pipeline-builder	MIT	Generates CI/CD pipelines from detected project stack
+code-reviewer	engineering	alirezarezvani/claude-skills	-	engineering-team/skills/code-reviewer	MIT	Automated code review: complexity, SOLID violations, smells, review reports
+database-designer	engineering	alirezarezvani/claude-skills	-	engineering/skills/database-designer	MIT	Schema design, migrations, index optimisation, SQL vs NoSQL choice
+helm-chart-builder	engineering	alirezarezvani/claude-skills	-	engineering/helm-chart-builder/skills/helm-chart-builder	MIT	Helm chart scaffolding, values design, templates, security hardening
+observability-designer	engineering	alirezarezvani/claude-skills	-	engineering/skills/observability-designer	MIT	Designs SLOs, alerts, dashboards and monitoring strategy
+secrets-vault-manager	engineering	alirezarezvani/claude-skills	-	engineering/skills/secrets-vault-manager	MIT	Sets up Vault and cloud secret stores, rotation, auditing
+senior-architect	engineering	alirezarezvani/claude-skills	-	engineering-team/skills/senior-architect	MIT	System architecture decisions, ADRs, dependency analysis, architecture diagrams
+senior-backend	engineering	alirezarezvani/claude-skills	-	engineering-team/skills/senior-backend	MIT	Backend API, database, auth and microservice design guidance
+senior-frontend	engineering	alirezarezvani/claude-skills	-	engineering-team/skills/senior-frontend	MIT	React/Next.js/TypeScript/Tailwind frontend building and optimisation
+senior-fullstack	engineering	alirezarezvani/claude-skills	-	engineering-team/skills/senior-fullstack	MIT	Fullstack project scaffolding and code quality analysis
+senior-qa	engineering	alirezarezvani/claude-skills	-	engineering-team/skills/senior-qa	MIT	Generates unit, integration and E2E tests for React/Next.js
+senior-secops	engineering	alirezarezvani/claude-skills	-	engineering-team/skills/senior-secops	MIT	SecOps: SAST/DAST scans, CVE remediation, compliance checks
+senior-security	engineering	alirezarezvani/claude-skills	-	engineering-team/skills/senior-security	MIT	Threat modelling, STRIDE, OWASP, secure architecture and scanning
+terraform-patterns	engineering	alirezarezvani/claude-skills	-	engineering/terraform-patterns/skills/terraform-patterns	MIT	Terraform module, state, provider and security patterns
+playwright-cli	testing	microsoft/playwright-cli	-	skills/playwright-cli	Apache-2.0	Drives browsers and Playwright tests from the command line
+threejs-animation	threejs	CloudAI-X/threejs-skills	-	skills/threejs-animation	MIT	Three.js keyframe, skeletal and morph-target animation
+threejs-fundamentals	threejs	CloudAI-X/threejs-skills	-	skills/threejs-fundamentals	MIT	Three.js scene, camera, renderer and Object3D basics
+threejs-geometry	threejs	CloudAI-X/threejs-skills	-	skills/threejs-geometry	MIT	Three.js built-in, custom and instanced geometry
+threejs-interaction	threejs	CloudAI-X/threejs-skills	-	skills/threejs-interaction	MIT	Three.js raycasting, controls and input handling
+threejs-lighting	threejs	CloudAI-X/threejs-skills	-	skills/threejs-lighting	MIT	Three.js light types, shadows and environment lighting
+threejs-loaders	threejs	CloudAI-X/threejs-skills	-	skills/threejs-loaders	MIT	Three.js GLTF, texture and model loading patterns
+threejs-materials	threejs	CloudAI-X/threejs-skills	-	skills/threejs-materials	MIT	Three.js PBR, basic and shader materials
+threejs-postprocessing	threejs	CloudAI-X/threejs-skills	-	skills/threejs-postprocessing	MIT	Three.js EffectComposer, bloom, DOF and screen effects
+threejs-shaders	threejs	CloudAI-X/threejs-skills	-	skills/threejs-shaders	MIT	Three.js GLSL shaders, ShaderMaterial and uniforms
+threejs-textures	threejs	CloudAI-X/threejs-skills	-	skills/threejs-textures	MIT	Three.js textures, UV mapping and environment maps
+task-observer	workflow	rebelytics/one-skill-to-rule-them-all	-	.	CC-BY-4.0	Watches task sessions and logs skill-improvement observations
