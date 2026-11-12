@@ -20,12 +20,28 @@ if [ -z "$CLAUDE" ]; then
 fi
 
 say()  { printf '\n\033[1m%s\033[0m\n' "$*"; }
+FAILED=""
 want() {
-  case "$MODE" in --all) return 0 ;; --kit) return 1 ;; esac
-  printf '%s [y/N] ' "$1"; read -r a; [ "$a" = y ] || [ "$a" = Y ]
+  case "$MODE" in
+    --all) say "$1"; return 0 ;;
+    --kit) return 1 ;;
+  esac
+  printf '\n%s [y/N] ' "$1"; read -r a; [ "$a" = y ] || [ "$a" = Y ]
 }
-market() { "$CLAUDE" plugin marketplace add "$1" 2>&1 | tail -1; }
-plugin() { "$CLAUDE" plugin install "$1" 2>&1 | tail -1; }
+# Run a plugin command, show its last line, and remember any failure.
+run() { # run <label> <claude plugin args...>
+  local label="$1" out rc; shift
+  out=$("$CLAUDE" plugin "$@" 2>&1); rc=$?
+  if [ $rc -eq 0 ] || printf '%s' "$out" | grep -qi 'already'; then
+    printf '  ok      %s\n' "$label"
+  else
+    printf '  FAILED  %s\n%s\n' "$label" "$(printf '%s\n' "$out" | tail -3 | sed 's/^/          /')"
+    FAILED="${FAILED}  - ${label}
+"
+  fi
+}
+market() { run "marketplace $1" marketplace add "$1"; }
+plugin() { run "plugin $1" install "$1"; }
 
 if [ "$MODE" = "--status" ]; then
   say "Marketplaces";  "$CLAUDE" plugin marketplace list 2>&1
@@ -38,8 +54,15 @@ if [ "$MODE" = "--status" ]; then
   exit 0
 fi
 
-say "1. team-kit (this repository)"
-market "$KIT"
+say "1. team-kit"
+# Prefer the published repository, so `claude plugin marketplace update` keeps working
+# after this folder is moved or deleted. Fall back to this folder when offline.
+if "$CLAUDE" plugin marketplace add "18-ashish-sharma/claude-team-kit" >/dev/null 2>&1 \
+   || "$CLAUDE" plugin marketplace list 2>/dev/null | grep -q 'claude-team-kit'; then
+  printf '  ok      marketplace claude-team-kit\n'
+else
+  market "$KIT"
+fi
 plugin "team-kit@claude-team-kit"
 
 if want "2. Install ECC (agents, reviewers and workflow skills, MIT, github.com/affaan-m/ECC)?"; then
@@ -72,7 +95,9 @@ if want "6. Install Claude's document skills (Word, PDF, PowerPoint, Excel; from
 fi
 
 if want "7. Install the 53 extra community skills (senior engineer roles, cloud and DevOps, UI design, three.js, Playwright; each fetched from its author's repository)?"; then
-  "$KIT/scripts/install-extra-skills.sh"
+  "$KIT/scripts/install-extra-skills.sh" | grep -v -e '^installed ' -e '^present ' \
+    || FAILED="${FAILED}  - some community skills (run scripts/install-extra-skills.sh to see which)
+"
   echo "See the full list any time: scripts/install-extra-skills.sh --list"
 fi
 
@@ -82,7 +107,12 @@ for t in gitleaks pandoc; do
   else echo "  missing  $t   (brew install $t)"; fi
 done
 
-say "Done"
+if [ -n "$FAILED" ]; then
+  say "Finished with problems"
+  printf 'These steps did not complete:\n%s\nEverything else was installed. Fix the cause and run ./setup.sh again; it is safe to re-run.\n' "$FAILED"
+else
+  say "Done"
+fi
 cat <<EOF
 Restart Claude Code, then try:
   /team-kit:team-kit-guide       what is in the kit and which skill to use when
@@ -93,5 +123,6 @@ To protect a repository for everyone who commits to it (not only AI sessions):
   $KIT/scripts/install-git-guard.sh /path/to/repo
 
 To start your own rules file from the template:
-  cp $KIT/templates/CLAUDE.md ~/.claude/CLAUDE.md     (only if you do not have one yet)
+  cp -n $KIT/templates/CLAUDE.md ~/.claude/CLAUDE.md     (-n keeps an existing file untouched)
 EOF
+[ -z "$FAILED" ]
