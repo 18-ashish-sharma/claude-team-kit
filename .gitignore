@@ -1,0 +1,14 @@
+# Never publish these
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.keystore
+.private-denylist
+settings.local.json
+
+# Local noise
+.DS_Store
+node_modules/
+*.log

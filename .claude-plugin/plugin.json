@@ -1,0 +1,12 @@
+{
+  "name": "team-kit",
+  "version": "0.1.0",
+  "description": "Team working rules as skills: PR review loop, scenario matrix, secret guard, safe database targets, disk clean-up, memory guard, plain-language explainers, guides and document conversion.",
+  "author": {
+    "name": "Ashish Sharma",
+    "url": "https://github.com/18-ashish-sharma"
+  },
+  "repository": "https://github.com/18-ashish-sharma/claude-team-kit",
+  "license": "MIT",
+  "keywords": ["claude-code", "skills", "agents", "hooks", "code-review", "secrets", "cleanup", "docs", "team"]
+}

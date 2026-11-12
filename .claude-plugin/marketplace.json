@@ -1,0 +1,24 @@
+{
+  "name": "claude-team-kit",
+  "owner": {
+    "name": "Ashish Sharma"
+  },
+  "metadata": {
+    "description": "One clone for a whole team: working rules, review loops, secret handling, disk and memory hygiene, plain-language explainers, and guide/PDF/document skills for Claude Code, plus a one-step installer for ECC, gstack and superpowers."
+  },
+  "plugins": [
+    {
+      "name": "team-kit",
+      "source": "./",
+      "description": "Team working rules as skills: PR review loop, scenario matrix, secret guard, safe database targets, disk clean-up, memory guard, plain-language explainers, guides and document conversion.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Ashish Sharma"
+      },
+      "repository": "https://github.com/18-ashish-sharma/claude-team-kit",
+      "license": "MIT",
+      "keywords": ["skills", "agents", "hooks", "code-review", "secrets", "cleanup", "docs", "team"],
+      "category": "workflow"
+    }
+  ]
+}
